@@ -50,7 +50,7 @@ function MobileNavbar() {
             </div>
           </SheetContent>
         </Sheet>
-        <div className="flex items-center h-[80px] min-h-[60px] gap-x-4">
+        <div className="flex h-[80px] min-h-[60px] items-center gap-x-4">
           <h1 className="text-xl font-semibold">Budgify</h1>
         </div>
         <div className="flex items-center gap-2">
@@ -105,7 +105,7 @@ function NavbarItem({
         className={cn(
           buttonVariants({ variant: "ghost" }),
           "w-full justify-start text-lg text-muted-foreground hover:text-foreground",
-          isActive && "text-foreground"
+          isActive && "text-foreground",
         )}
         onClick={() => {
           if (clickCallback) clickCallback();
