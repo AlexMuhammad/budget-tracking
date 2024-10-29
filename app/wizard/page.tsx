@@ -10,10 +10,15 @@ import { CurrencyCombobox } from "@/components/ui/currency-combobox";
 import { Separator } from "@/components/ui/separator";
 import { currentUser } from "@clerk/nextjs/server";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import React from "react";
 
 export default async function Page() {
   const user = await currentUser();
+
+  if (!user) {
+    redirect("/sign-in");
+  }
   return (
     <div className="container mx-auto flex max-w-2xl flex-col items-center justify-between gap-4">
       <div>
