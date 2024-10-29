@@ -35,6 +35,7 @@ export function CurrencyCombobox() {
   const userSettings = useQuery<UserSettings>({
     queryKey: ["userSettings"],
     queryFn: () => fetch("/api/user-settings").then((res) => res.json()),
+    refetchOnWindowFocus: false,
   });
 
   React.useEffect(() => {
