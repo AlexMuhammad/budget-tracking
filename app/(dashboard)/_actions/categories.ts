@@ -17,6 +17,8 @@ export async function CreateCategory(form: CreateCategorySchemaType) {
 
   const { name, icon, type } = parsedBody.data;
 
+  console.log(parsedBody.data);
+
   return await prisma.category.create({
     data: {
       userId: user.id,
